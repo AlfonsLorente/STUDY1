@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">STUDY1</string>
+    <string name="times_clicked">Times clicked: </string>
+    <string name="insert_some_text_bitch">Insert some text bitch</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

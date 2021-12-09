@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/parentLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    android:layout_gravity="center"
+    tools:context=".MainActivity">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/lay1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+        android:layout_marginStart="@dimen/RelativeLayout_Margin"
+        android:layout_marginTop="@dimen/RelativeLayout_Margin"
+        android:layout_marginEnd="@dimen/RelativeLayout_Margin"
+        android:layout_marginBottom="@dimen/RelativeLayout_Margin"
+        android:orientation="horizontal">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/clickMe"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:background="#FF0000"
+            android:gravity="center"
+            android:text="Click Me!"
+            android:textColor="@color/black" />
+
+        <EditText
+            android:id="@+id/editTextClickMe"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:background="#ffffff"
+            android:hint="@string/insert_some_text_bitch"
+            android:visibility="invisible" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/send"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:background="#00ff00"
+            android:gravity="center"
+            android:text="Send!"
+            android:textColor="@color/black"
+            android:visibility="invisible" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/RelativeLayout_Margin"
+        android:layout_marginRight="@dimen/RelativeLayout_Margin"
+        android:layout_marginBottom="@dimen/RelativeLayout_Margin"
+        android:id="@+id/lay2"
+        android:layout_below="@id/lay1">
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:textColor="#ff0000"
+            android:layout_height="wrap_content"
+            android:text="@string/times_clicked" />
+        <TextView
+            android:id="@+id/clickedTimes"
+            android:layout_width="wrap_content"
+            android:textColor="#ff0000"
+            android:layout_height="wrap_content"
+            android:text="" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragmentContainerView"
+        android:name="com.example.study1.BlankFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/lay2"
+        android:visibility="visible" />
+
+
+</RelativeLayout>
