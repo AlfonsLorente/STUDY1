@@ -18,6 +18,8 @@ import android.widget.EditText;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import androidx.appcompat.widget.*;
+import androidx.fragment.app.DialogFragment;
+
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
@@ -31,6 +33,8 @@ public class MainActivity extends AppCompatActivity {
     private TextView clickedTimes;
     private GestureDetector gestureDetector;
     private AppCompatButton fragmentButton;
+
+    AppCompatButton button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
         clickedTimes.setText("" + buttonCounter);
         gestureDetector = new GestureDetector(this, new MyGestureListener());
         fragmentButton = findViewById(R.id.fragmentButton);
+        button = findViewById(R.id.UselessButton);
 
         Log.d("debug", "hey");
        clickMe.setOnClickListener(new View.OnClickListener(){
@@ -58,6 +63,7 @@ public class MainActivity extends AppCompatActivity {
                     mediaPlayer = MediaPlayer.create(MainActivity.this, R.raw.ducksound);
                     etClickMe.setVisibility(View.VISIBLE);
                     sendButton.setVisibility(View.VISIBLE);
+                    button.setVisibility(View.VISIBLE);
                     buttonCounter++;
                     rl.setBackgroundResource(R.drawable.duck);
                     mediaPlayer.start();
@@ -68,6 +74,7 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }else{
                     etClickMe.setVisibility(View.INVISIBLE);
+                    button.setVisibility(View.INVISIBLE);
                     sendButton.setVisibility(View.INVISIBLE);
                     buttonCounter++;
                     rl.setBackgroundResource(R.drawable.background);
@@ -75,7 +82,11 @@ public class MainActivity extends AppCompatActivity {
                 clickedTimes.setText("" + buttonCounter);
                 Log.d("debug", "hey2");
 
+
+
             }
+
+
         });
 
        sendButton.setOnClickListener(new View.OnClickListener(){
@@ -87,13 +98,19 @@ public class MainActivity extends AppCompatActivity {
            }
        });
 
-      /* fragmentButton.setOnClickListener(new View.OnClickListener() {
-           @Override
-           public void onClick(View v) {
-               Toast.makeText(MainActivity.this, "Holiiiis", Toast.LENGTH_SHORT).show();
-           }
-       });*/
 
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openDialog();
+            }
+        });
+
+    }
+
+    private void openDialog() {
+        DialogFragment dialogFragment = new DialogFragment();
+        dialogFragment.show(getSupportFragmentManager(), "DialogMessage");
     }
 
 

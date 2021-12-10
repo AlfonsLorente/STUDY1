@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+    android:layout_width="wrap_content"
     android:background="#FF00FF"
     android:id="@+id/frame"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:gravity="center"
     tools:context=".BlankFragment">
 
@@ -15,7 +15,8 @@
         android:id="@+id/fragmentButton"
         android:onClick="FragmentButtonClick"
         android:text="Holaaaa"
-        android:textColor="#ff0000"
+
+        android:textColor="#f4c244"
         />
 
-</LinearLayout>
+</FrameLayout>

@@ -73,14 +73,40 @@
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 
-
-    <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/fragmentContainerView"
-        android:name="com.example.study1.BlankFragment"
+    <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/lay3"
         android:layout_below="@id/lay2"
-        android:visibility="visible" />
+        >
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/fragmentContainerView"
+            android:name="com.example.study1.BlankFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/lay2"
+            android:visibility="visible" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/lay4"
+        android:layout_below="@id/lay3"
+        >
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="wrap_content"
+            android:id="@+id/UselessButton"
+            android:layout_height="wrap_content"
+            android:background="@drawable/shape2"
+            android:visibility="invisible"
+            android:text="Don't click me"
+            />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+    <SeekBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
 
 
 </RelativeLayout>

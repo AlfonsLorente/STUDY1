@@ -61,15 +61,7 @@ public class BlankFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
-        
-        /*AppCompatActivity appCompatActivity = new AppCompatActivity();
-        button = appCompatActivity.findViewById(R.id.fragmentButton);
-        button.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v) {
-                //Toast.makeText(null, "Holiiis", Toast.LENGTH_SHORT).show();
-            }
-        });*/
+
 
     }
 
